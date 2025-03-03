@@ -23,7 +23,7 @@ h2 {
   flex-direction: column;
 }
 .profile__image {
-  margin: auto;
+  align-self: center;
   object-fit: cover;
   border-radius: 999px;
   aspect-ratio: 1 / 1;
