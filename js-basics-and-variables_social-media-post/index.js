@@ -10,7 +10,12 @@ console.clear();
 */
 
 // --v-- write your code here --v--
-
+let title = "Hey There!";
+let text =
+  "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
+let likes = "123";
+let user = "Andi";
+let isReported = "false";
 // --^-- write your code here --^--
 
 /*
@@ -18,5 +23,7 @@ console.clear();
 */
 
 // --v-- write your code here --v--
-
+console.log(title + " " + text + " " + likes + " " + user + " " + isReported);
+likes++;
+console.log(likes);
 // --^-- write your code here --^--
