@@ -241,6 +241,24 @@ CSS based on conditions such as viewport width, etc. */
 /* Media Query Tablet */
 /* --- */
 /* Replace this comment with your media query. */
+
+@media (min-width: 800px) {
+  .card-section {
+    padding: 3px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .product-card,
+  .intro-text {
+    width: 48%;
+  }
+  .card-section > * {
+    width: 48%;
+  }
+  .intro-text {
+    align-self: self-start;
+  }
+}
 /* --- */
 
 /* Media Query Desktop */
