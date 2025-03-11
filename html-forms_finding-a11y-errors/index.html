@@ -16,15 +16,21 @@
     </p>
 
     <form for="title">
-      <fieldset>
+      <fieldset aria-describedby="description">
         <legend>Enter your information</legend>
-        <label>Name:</label>
+        <label for="name-Input">Name:</label>
         <input id="name-Input" type="text" />
-        <label>Age:</label>
+        <label for="age-Input">Age:</label>
         <input id="age-Input" type="text" />
-        <label>Color you cannot see:</label>
+        <label for="color-Input">Color you cannot see:</label>
         <input id="color-Input" type="color" />
-        <textarea rows="7" placeholder="Leave us a message..."></textarea>
+        <label for="text-input">Message</label>
+        <textarea
+          rows="7"
+          placeholder="Write your message here .."
+          id="text-input"
+        ></textarea>
+        <label for="submit">Submit</label>
         <button type="submit">Submit</button>
       </fieldset>
     </form>
