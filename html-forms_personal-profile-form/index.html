@@ -9,5 +9,32 @@
     <title>Personal Profile Form</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>Personal Informations</legend>
+        <label for="first-name">First name</label>
+        <input type="text" id="first-name" />
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" />
+        <label for="birth-date">Birth date</label>
+        <input type="date" id="birth-date" />
+      </fieldset>
+      <p>
+        Cann you tell us a bit more? we do not want to bother you with unwanted
+        adds!
+      </p>
+      <fieldset>
+        <legend>Further Informations</legend>
+        <label for="favorite-color">Favorite color</label>
+        <input type="color" id="favorite-color" />
+        <label for="pet">Whats your favorite pet</label>
+        <select name="Whats your favorite pet?" id="pet">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="Ant">Ant</option>
+        </select>
+      </fieldset>
+    </form>
+  </body>
 </html>
