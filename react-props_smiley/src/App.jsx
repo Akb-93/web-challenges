@@ -1,3 +1,15 @@
 export default function App() {
-  return <h1>Replace me with your component!</h1>;
+  return (
+    <div>
+      <Smiley isHappy={true} />
+    </div>
+  );
+}
+
+function Smiley({ isHappy }) {
+  return (
+    <p aria-label={isHappy ? "Happy smiley" : "Sad smiley"}>
+      {isHappy ? "😊" : "😞"}
+    </p>
+  );
 }
