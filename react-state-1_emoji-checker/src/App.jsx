@@ -1,18 +1,21 @@
+import React, { useState } from "react";
 import "./styles.css";
 
 export default function App() {
-  let code = "?";
-
   const validCode = "🐡🐠🐋";
-
+  const [code, setCode] = useState("");
   function handleClick(emoji) {
-    console.log(emoji);
-    console.log(code);
+    setCode(code + emoji);
+  }
+
+  function handleReset() {
+    setCode("");
   }
 
   return (
     <div className="container">
       <div className="button-container">
+        {/* puffferfish button */}
         <button
           type="button"
           onClick={() => {
@@ -23,6 +26,7 @@ export default function App() {
             🐡
           </span>
         </button>
+        {/* Whale button */}
         <button
           type="button"
           onClick={() => {
@@ -33,6 +37,7 @@ export default function App() {
             🐋
           </span>
         </button>
+        {/* clownfish button */}
         <button
           type="button"
           onClick={() => {
@@ -45,12 +50,7 @@ export default function App() {
         </button>
       </div>
 
-      <button
-        type="button"
-        onClick={() => {
-          console.log("Reset Code!");
-        }}
-      >
+      <button type="button" onClick={handleReset}>
         Reset
       </button>
 
