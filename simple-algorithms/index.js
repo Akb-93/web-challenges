@@ -1,7 +1,12 @@
 // Find the maximum
 function maxOfTwoNumbers(num1, num2) {
-  // TODO:  
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
 }
+
 
 
 // Find the longest word
@@ -9,7 +14,13 @@ function maxOfTwoNumbers(num1, num2) {
 const words = ["Jaws", "Up", "Alien", "Gravity", "Inception", "Psycho",];
 
 function findLongestWord(words) {
-  // TODO:  
+  let longestWord = "";
+  for (const word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
 }
 
 // Calculate the sum
@@ -18,6 +29,11 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(numbers) {
   // TODO:  
+  let sum = 0;
+  for (const number of numbers) {
+    sum += number;
+  }
+  return sum;
 }
 
 // Calculate the average length of the words 
@@ -37,6 +53,14 @@ const words2 = [
 
 function averageWordLength(words) {
   // TODO:
+  if (words.length === 0) {
+    return 0;
+  }
+  let totalLength = 0;
+  for (const word of words) {
+    totalLength += word.length;
+  }
+  return totalLength / words.length;
 }
 
 // Unique arrays - return an array without duplicates
@@ -57,6 +81,7 @@ const words3 = [
 
 function uniquifyArray(words) {
   // TODO:
+  return [...new Set(words)];
 }
 
 // Find elements
@@ -64,6 +89,7 @@ const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating
 
 function doesWordExist(haystack, needle) {
   // TODO:
+  return haystack.includes(needle);
 }
 
 // Count repetition
@@ -84,6 +110,13 @@ const wordsCount = [
 
 function howManyTimes(haystack, needle) {
   // TODO:
+  let count = 0;
+  for (const word of haystack) {
+    if (word === needle) {
+      count++;
+    }
+  }
+  return count;
 }
 
 // Bonus: A generic sum function
