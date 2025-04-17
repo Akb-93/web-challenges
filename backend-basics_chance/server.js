@@ -1,3 +1,21 @@
-import { createServer } from "node:http";
+import { createServer } from 'node:http';
+import Chance from 'chance';
 
-// export const server = …
+
+const chance = new Chance();
+const server = createServer((request, response) => {
+
+  const name = chance.name();
+  const age = chance.age(); 
+  const profession = chance.profession(); 
+
+ 
+  const responseString = `Hello, my name is ${name} and I am ${age} years old. I am a ${profession}.`;
+
+
+  response.statusCode = 200;
+  response.end(responseString);
+});
+
+
+export { server };
