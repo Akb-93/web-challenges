@@ -24,6 +24,18 @@ export default function Product() {
       <p>
         Price: {data.price} {data.currency}
       </p>
+      {data.reviews && data.reviews.length > 0 && (
+        <ReviewsSection>
+          <h3>Reviews</h3>
+          {data.reviews.map((review) => (
+            <ReviewCard key={review._id}>
+              <h4>{review.title}</h4>
+              <p>{review.text}</p>
+              <Rating>Rating: {review.rating}/5</Rating>
+            </ReviewCard>
+          ))}
+        </ReviewsSection>
+      )}
       <StyledLink href="/">Back to all</StyledLink>
     </ProductCard>
   );
@@ -32,4 +44,20 @@ export default function Product() {
 export const ProductCard = styled.article`
   padding: 0.5rem 1rem;
   box-shadow: 0px 1px 5px -2px var(--color-granite);
+`;
+
+const ReviewsSection = styled.section`
+  margin-top: 2rem;
+`;
+
+const ReviewCard = styled.article`
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--color-granite);
+  border-radius: 4px;
+`;
+
+const Rating = styled.p`
+  color: var(--color-nemo);
+  font-weight: bold;
 `;

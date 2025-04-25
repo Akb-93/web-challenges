@@ -1,14 +1,24 @@
-import { products } from "../../../lib/products";
+import dbConnect from '@/db/connect';
+import Product from '@/db/models/Product';
 
-export default function handler(request, response) {
+export default async function handler(request, response) {
+  await dbConnect();
   const { id } = request.query;
 
-  const product = products.find((product) => product.id === id);
+  if (request.method === 'GET') {
+    try {
+      const product = await Product.findById(id).populate("reviews");
 
-  if (!product) {
-    response.status(404).json({ status: "Not Found" });
-    return;
+      if (!product) {
+        return response.status(404).json({ status: 'Not Found' });
+      }
+
+      response.status(200).json(product);
+    } catch (error) {
+      console.error('Error fetching product:', error);
+      response.status(500).json({ error: 'Failed to fetch product' });
+    }
+  } else {
+    response.status(405).json({ error: `Method ${request.method} Not Allowed` });
   }
-
-  response.status(200).json(product);
 }
